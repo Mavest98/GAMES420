@@ -1,0 +1,66 @@
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-cover" style="background-image: url('assets/IMG-20240619-WA0034.jpg');background-size: cover;  height: 100vh; background-position: center;">
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-200">Create your account</h2>
+  </div>
+
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-6">
+      <div>
+        <label for="name" class="block text-sm font-medium leading-6 text-gray-200">Name</label>
+        <div class="mt-2">
+          <input id="name" formControlName="name" type="text" required class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset placeholder:text-gray-800 focus:ring-2 sm:text-sm sm:leading-6"
+            [ngClass]="{
+              'ring-gray-300 focus:ring-indigo-600': name?.valid && !name?.invalid,
+              'ring-red-500 focus:ring-red-500': name?.invalid && (name?.dirty || name?.touched)
+            }">
+          <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="text-red-500 text-sm">Name is required.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium leading-6 text-gray-200">Email address</label>
+        <div class="mt-2">
+          <input id="email" formControlName="email" type="email" required class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset placeholder:text-gray-800 focus:ring-2 sm:text-sm sm:leading-6"
+            [ngClass]="{
+              'ring-gray-300 focus:ring-indigo-600': email?.valid && !email?.invalid,
+              'ring-red-500 focus:ring-red-500': email?.invalid && (email?.dirty || email?.touched)
+            }">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-red-500 text-sm">Valid email is required.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium leading-6 text-gray-200">Password</label>
+        <div class="mt-2">
+          <input id="password" formControlName="password" type="password" required class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset placeholder:text-gray-800 focus:ring-2 sm:text-sm sm:leading-6"
+            [ngClass]="{
+              'ring-gray-300 focus:ring-indigo-600': password?.valid && !password?.invalid,
+              'ring-red-500 focus:ring-red-500': password?.invalid && (password?.dirty || password?.touched)
+            }">
+          <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-red-500 text-sm">Password must be at least 6 characters.</div>
+        </div>
+      </div>
+
+      <div>
+        <label for="confirm-password" class="block text-sm font-medium leading-6 text-gray-200">Confirm Password</label>
+        <div class="mt-2">
+          <input id="confirm-password" formControlName="confirmPassword" type="password" required class="block w-full rounded-md border-0 py-1.5 shadow-sm ring-1 ring-inset placeholder:text-gray-800 focus:ring-2 sm:text-sm sm:leading-6"
+            [ngClass]="{
+              'ring-gray-300 focus:ring-indigo-600': confirmPassword?.valid && !confirmPassword?.invalid,
+              'ring-red-500 focus:ring-red-500': confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)
+            }">
+          <div *ngIf="confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)" class="text-red-500 text-sm">Confirmation password is required.</div>
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" [disabled]="registerForm.invalid" class="flex w-full justify-center rounded-md bg-white px-3 py-1.5 text-sm font-semibold leading-6 text-gray-800 shadow-sm hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800">Register</button>
+      </div>
+    </form>
+
+    <p class="mt-10 text-center text-sm text-gray-200">
+      Already have an account?
+      <a routerLink="/login" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign in</a>
+    </p>
+  </div>
+</div>
