@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class LandingComponent {
   isMobileMenuOpen = false;
 
+
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }

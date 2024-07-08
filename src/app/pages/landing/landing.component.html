@@ -1,64 +1,58 @@
-<!-- header.component.html -->
+<!-- <div class="min-h-screen bg-cover bg-center flex flex-col justify-center items-center" style="background-image: url('assets/DALL·E 2024-07-07 21.14.01 - A vibrant and dynamic background for a gaming website featuring a mix of futuristic and fantasy elements with a scary twist. The scene includes neon l.webp');">
+  <div class="text-center text-white">
+    <h1 class="text-5xl font-bold mb-4">Welcome to the Ultimate Gaming Experience</h1>
+    <p class="text-xl mb-8">Dive into a world of adventure and excitement</p>
+    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+      Get Started
+    </button>
+  </div>
+</div> -->
 
-<header class="absolute inset-x-0 top-0 z-50" style="background-image: url('assets/IMG-20240619-WA0034.jpg'); background-size: contain;  height: 100%; background-position: center;">
-  <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-    <div class="flex lg:flex-1">
-      <a href="#" class="-m-1.5 p-1.5">
-        <span class="sr-only">Your Company</span>
-        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-      </a>
-    </div>
-    <div class="flex lg:hidden">
-      <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-        (click)="toggleMobileMenu()">
-        <span class="sr-only">Open main menu</span>
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button>
-    </div>
-    <div class="hidden lg:flex lg:gap-x-12">
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Games</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Shop</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
-    </div>
-    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
+<div class="min-h-screen bg-cover bg-center flex flex-col" style="background-image: url('assets/DALL·E 2024-07-07 21.14.01 - A vibrant and dynamic background for a gaming website featuring a mix of futuristic and fantasy elements with a scary twist. The scene includes neon l.webp');">
+  <!-- Navigation Bar -->
+  <nav class="fixed w-full bg-opacity-50 bg-gray-900 text-white p-4 flex justify-between items-center">
+    <div class="text-2xl font-bold"><img class="logo" src="assets/DALL·E 2024-07-08 15.35.11 - A beautifully designed gaming logo featuring a game controller with vibrant colors. The background is a subtle gradient of light pink and white. The t.webp" alt=""></div>
+    <div>
+      <a href="#features" class="px-4">Features</a>
+      <a href="#about" class="px-4">About</a>
+      <a href="#contact" class="px-4">Contact</a>
     </div>
   </nav>
-  <!-- Mobile menu, show/hide based on menu open state. -->
-  <div *ngIf="isMobileMenuOpen" class="lg:hidden" role="dialog" aria-modal="true">
-    <!-- Background backdrop, show/hide based on slide-over state. -->
-    <div class="fixed inset-0 z-50" (click)="closeMobileMenu()"></div>
-    <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-      <div class="flex items-center justify-between">
-        <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
-        </a>
-        <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" (click)="closeMobileMenu()">
-          <span class="sr-only">Close menu</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+
+  <!-- Hero Section -->
+  <div class="flex flex-col justify-center items-center flex-grow">
+    <div class="text-center text-white mt-20" data-aos="fade-up">
+      <h1 class="text-5xl font-bold mb-4">Welcome to the Ultimate Gaming Experience</h1>
+      <p class="text-xl mb-8">Dive into a world of adventure and excitement</p>
+      <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+        Get Started
+      </button>
+    </div>
+  </div>
+
+  <!-- Description Section -->
+  <div id="features" class="bg-white bg-opacity-0 py-10 px-4" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-white text-center mb-8">Our Features</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-gray-800 text-white p-6 bg-opacity-10 rounded-lg shadow-lg" data-aos="zoom-in" >
+        <img src="assets/IMG-20240619-WA0032.jpg" alt="Feature 1" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-2xl font-bold mb-2">Dive in </h3>
+        <p class="text-lg">Exciting gameplay modes and adventures.</p>
       </div>
-      <div class="mt-6 flow-root">
-        <div class="-my-6 divide-y divide-gray-500/10">
-          <div class="space-y-2 py-6">
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Games</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Discover</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Store</a>
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</a>
-          </div>
-          <div class="py-6">
-            <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
-          </div>
-        </div>
+      <div class="bg-gray-800 text-white p-6 bg-opacity-10 rounded-lg shadow-lg" data-aos="zoom-in">
+        <img src="assets/IMG-20240619-WA0037.jpg" alt="Feature 2" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-2xl font-bold mb-2">Make sure you join</h3>
+        <p class="text-lg">Competitive online multiplayer experiences.</p>
+      </div>
+      <div class="bg-gray-800 text-white p-6 bg-opacity-10 rounded-lg shadow-lg" data-aos="zoom-in">
+        <img src="assets/IMG-20240619-WA0034.jpg" alt="Feature 3" class="w-full h-40 object-cover rounded-lg mb-4">
+        <h3 class="text-2xl font-bold mb-2 color: black ">You Ready</h3>
+        <p class="text-lg">Stunning graphics and immersive storylines.</p>
       </div>
     </div>
   </div>
-</header>
+
+  <!-- Additional Sections for About and Contact can be added here -->
+
+</div>
+

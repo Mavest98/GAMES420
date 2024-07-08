@@ -9,6 +9,11 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './pages/home/HomeComponent';
+import { environment } from 'src/environments/environment.development';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
+
 
 @NgModule({
   declarations: [
@@ -23,7 +28,9 @@ import { HomeComponent } from './pages/home/HomeComponent';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
