@@ -13,6 +13,10 @@ import { environment } from 'src/environments/environment.development';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
+import { GenreComponent } from './componets/genre/genre.component';
+import { MainComponent } from './componets/main/main.component';
+import { SidebarComponent } from './componets/sidebar/sidebar.component';
+
 
 
 @NgModule({
@@ -22,7 +26,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     LoginComponent,
     RegisterComponent,
     LandingComponent,
-    HomeComponent
+    HomeComponent,
+    SidebarComponent,
+    GenreComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

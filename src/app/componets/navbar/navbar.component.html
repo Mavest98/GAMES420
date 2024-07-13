@@ -1,1 +1,41 @@
-<p>navbar works!</p>
+<div class="bg-white shadow-lg">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="text-lg font-semibold text-gray-700">
+      <a href="#" class="hover:text-gray-900">GAMES420</a>
+    </div>
+    <div class="hidden md:flex space-x-4">
+      <a href="#" class="text-gray-700 hover:text-gray-900">Home</a>
+      <a href="#" class="text-gray-700 hover:text-gray-900">About</a>
+      <a href="#" class="text-gray-700 hover:text-gray-900">Services</a>
+      <a href="#" class="text-gray-700 hover:text-gray-900">Contact</a>
+    </div>
+    <div class="hidden md:block">
+      <a href="#" class="px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded hover:bg-blue-600">Login</a>
+    </div>
+    <div class="md:hidden">
+      <button id="menu-button" class="text-gray-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden">
+    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</a>
+    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">About</a>
+    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Services</a>
+    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Contact</a>
+    <a href="#" class="block px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded hover:bg-blue-600">Login</a>
+  </div>
+</div>
+
+<script>
+  document.getElementById('menu-button').addEventListener('click', function() {
+    var menu = document.getElementById('mobile-menu');
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+    } else {
+      menu.classList.add('hidden');
+    }
+  });
+</script>
